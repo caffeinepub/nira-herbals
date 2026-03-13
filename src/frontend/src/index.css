@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Forest green primary */
+    --primary: 0.45 0.12 155;
+    --primary-foreground: 0.98 0.005 90;
+
+    /* Warm beige background */
+    --background: 0.97 0.012 85;
+    --foreground: 0.18 0.03 155;
+
+    /* Soft gold accent */
+    --accent: 0.72 0.12 80;
+    --accent-foreground: 0.18 0.03 50;
+
+    /* Cards */
+    --card: 0.995 0.004 85;
+    --card-foreground: 0.18 0.03 155;
+
+    /* Popover */
+    --popover: 0.995 0.004 85;
+    --popover-foreground: 0.18 0.03 155;
+
+    /* Secondary - light sage */
+    --secondary: 0.91 0.04 155;
+    --secondary-foreground: 0.35 0.09 155;
+
+    /* Muted */
+    --muted: 0.93 0.015 85;
+    --muted-foreground: 0.52 0.03 100;
+
+    /* Destructive */
+    --destructive: 0.55 0.2 22;
+    --destructive-foreground: 0.98 0.005 90;
+
+    /* Borders */
+    --border: 0.88 0.025 100;
+    --input: 0.88 0.025 100;
+    --ring: 0.45 0.12 155;
+
+    --radius: 0.75rem;
+
+    /* Charts */
+    --chart-1: 0.45 0.12 155;
+    --chart-2: 0.72 0.12 80;
+    --chart-3: 0.65 0.15 22;
+    --chart-4: 0.55 0.1 200;
+    --chart-5: 0.75 0.14 120;
+
+    /* Sidebar */
+    --sidebar: 0.97 0.012 85;
+    --sidebar-foreground: 0.18 0.03 155;
+    --sidebar-primary: 0.45 0.12 155;
+    --sidebar-primary-foreground: 0.98 0.005 90;
+    --sidebar-accent: 0.91 0.04 155;
+    --sidebar-accent-foreground: 0.35 0.09 155;
+    --sidebar-border: 0.88 0.025 100;
+    --sidebar-ring: 0.45 0.12 155;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Mobile app layout */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  background: oklch(0.97 0.012 85);
+  box-shadow: 0 0 60px oklch(0.18 0.03 155 / 0.08);
+}
+
+/* Leaf decoration SVG backgrounds */
+.leaf-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C20 5 10 15 10 30 C10 45 20 55 30 55 C30 55 30 30 30 5Z' fill='%232d6a4f' opacity='0.04'/%3E%3Cpath d='M30 5 C40 5 50 15 50 30 C50 45 40 55 30 55 C30 55 30 30 30 5Z' fill='%232d6a4f' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Botanical pattern */
+.botanical-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='20' cy='60' rx='15' ry='8' fill='none' stroke='%232d6a4f' stroke-width='1' opacity='0.08' transform='rotate(-30 20 60)'/%3E%3Cellipse cx='100' cy='20' rx='12' ry='6' fill='none' stroke='%232d6a4f' stroke-width='1' opacity='0.06' transform='rotate(45 100 20)'/%3E%3Cellipse cx='80' cy='90' rx='10' ry='5' fill='none' stroke='%23c9a84c' stroke-width='1' opacity='0.07' transform='rotate(-15 80 90)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.72 0.09 155);
+  border-radius: 2px;
+}
+
+/* Page padding for bottom nav */
+.page-content {
+  padding-bottom: 5rem;
+}
+
+/* WhatsApp green */
+.whatsapp-green {
+  background-color: #25d366;
+}
